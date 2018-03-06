@@ -4,12 +4,15 @@ import {
     Image,
     StyleSheet,
     View,
+    ViewPropTypes
 } from 'react-native';
 import PropTypes from 'proptypes';
 
+const RNViewPropTypes  = ViewPropTypes || View.propTypes
+
 export default class Icon extends Component {
     static propTypes = {
-        containerStyle: View.propTypes.style,
+        containerStyle: RNViewPropTypes.style,
         imageStyle: Image.propTypes.style,
         name: PropTypes.string,
         source: Image.propTypes.source,

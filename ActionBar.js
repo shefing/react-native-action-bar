@@ -24,6 +24,7 @@ import {
     Text,
     TouchableWithoutFeedback,
     View,
+    ViewPropTypes
 } from 'react-native';
 import { throttle } from 'lodash';
 import color from 'color';
@@ -36,17 +37,19 @@ const colors = {
     defaultSeparatorColor: '#CCCCCC',
 };
 
+const RNViewPropTypes = ViewPropTypes || View.propTypes
+
 export default class ActionBar extends Component {
     static propTypes = {
         allowFontScaling: PropTypes.bool,
         backgroundColor: PropTypes.string,
         badgeColor: PropTypes.string,
         badgeTextColor: PropTypes.string,
-        containerStyle: View.propTypes.style,
+        containerStyle: RNViewPropTypes.style,
         disableShadows: PropTypes.bool,
         disableStatusBarHandling: PropTypes.bool,
         elevation: PropTypes.number,
-        iconContainerStyle: View.propTypes.style,
+        iconContainerStyle: RNViewPropTypes.style,
         iconImageStyle: Image.propTypes.style,
         isLeftBadgeLeft: PropTypes.bool,
         leftBadge: Badge.propTypes.content,
@@ -54,8 +57,8 @@ export default class ActionBar extends Component {
         leftIconImage: Icon.propTypes.source,
         leftIconImageStyle: Icon.propTypes.imageStyle,
         leftIconName: Icon.propTypes.name,
-        leftTouchableChildStyle: View.propTypes.style,
-        leftZoneContentContainerStyle: View.propTypes.style,
+        leftTouchableChildStyle: RNViewPropTypes.style,
+        leftZoneContentContainerStyle: RNViewPropTypes.style,
         onLeftPress: PropTypes.func,
         onRightTextPress: PropTypes.func,
         onTitlePress: PropTypes.func,
@@ -72,11 +75,11 @@ export default class ActionBar extends Component {
         ),
         rightText: PropTypes.string,
         rightTextStyle: Text.propTypes.style,
-        rightTouchableChildStyle: View.propTypes.style,
-        rightZoneContentContainerStyle: View.propTypes.style,
+        rightTouchableChildStyle: RNViewPropTypes.style,
+        rightZoneContentContainerStyle: RNViewPropTypes.style,
         throttleDelay: PropTypes.number,
         title: PropTypes.string,
-        titleContainerStyle: View.propTypes.style,
+        titleContainerStyle: RNViewPropTypes.style,
         titleStyle: Text.propTypes.style,
     };
 
